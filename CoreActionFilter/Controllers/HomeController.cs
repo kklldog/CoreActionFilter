@@ -20,7 +20,7 @@ namespace CoreActionFilter.Controllers
         }
 
         [FilterAsync]
-        public string Async()
+        public string A_sync()
         {
             Console.WriteLine("HomeController method Async running .");
 
@@ -51,6 +51,14 @@ namespace CoreActionFilter.Controllers
             Console.WriteLine("HomeController method Both running .");
 
             return "Both";
+        }
+
+        [FilterInject]
+        public string DI()
+        {
+            Console.WriteLine("HomeController method DI running .");
+
+            return "DI";
         }
     }
 }
