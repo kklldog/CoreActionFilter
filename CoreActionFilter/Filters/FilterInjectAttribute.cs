@@ -9,7 +9,7 @@ namespace CoreActionFilter.Filters
 {
     public class FilterInjectAttribute: ActionFilterAttribute
     {
-        public FilterInjectAttribute(IMyService myService)
+        public FilterInjectAttribute(string arg1, IMyService myService, string arg2)
         {
             if (myService == null)
             {
@@ -17,6 +17,10 @@ namespace CoreActionFilter.Filters
             }
 
             Console.WriteLine("Service {0} was injected .", myService.GetServiceName());
+            Console.WriteLine("arg1 is {0} .", arg1);
+            Console.WriteLine("arg2 is {0} .", arg2);
+
+            Console.WriteLine("FilterInjectAttribute was created .");
         }
     }
 }

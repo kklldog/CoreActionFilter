@@ -53,7 +53,7 @@ namespace CoreActionFilter.Controllers
             return "Both";
         }
 
-        [FilterInject]
+        [TypeFilter(typeof(FilterInjectAttribute), Arguments  = new object[] { "HAHA", "HOHO" })]
         public string DI()
         {
             Console.WriteLine("HomeController method DI running .");
